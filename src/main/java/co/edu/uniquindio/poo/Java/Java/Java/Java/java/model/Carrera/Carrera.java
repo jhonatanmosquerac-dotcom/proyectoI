@@ -43,42 +43,27 @@ public class Carrera{
         }
     }
 
-    public void asignarProfesor(Profesor profesor) {
-        for (Materia materia : listaMaterias) {
-            if (materia != null) {
-                materia.asignarProfesor(profesor);
-            }
-        }
-    }
-
     public void eliminarProfesor(Profesor profesor) {
         for (Materia materia : listaMaterias) {
             if (materia != null) {
-                materia.removerProfesor(profesor);
+                materia.getListaProfesores().remove(profesor);
             }
         }
     }
 
-    public ArrayList<Estudiante> registrarEstudianteMateria(Estudiante estudiante, Materia materia) {
-        ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
-        if (estudiante != null && materia != null) {
-            listaEstudiantes.add(estudiante);
-            materia.asignarEstudiante(estudiante);
-        }
-        return listaEstudiantes;
+    public void registrarEstudianteMateria(Estudiante estudiante, Materia materia) {
+    if (estudiante != null && materia != null) {
+        estudiante.inscribirMateria(materia);
     }
+}
 
-    public ArrayList<Materia> obtenerMateriasDisponibles() {
-        return new ArrayList<>(listaMaterias);
+public ArrayList<Materia> obtenerMateriasDeEstudiante(Estudiante estudiante) {
+    if (estudiante != null) {
+        return estudiante.getMateriasInscritas();
     }
+    return new ArrayList<>();
+}
 
-    public ArrayList<Materia> inscribirMateria(Materia materia) {
-    ArrayList<Materia> listaMaterias = new ArrayList<>();
-    if (materia != null) {
-    listaMaterias.add(materia);
-    }
-    return listaMaterias;
-    }
 
     public ArrayList<Materia> consultarSemestre(String semestre) {
         ArrayList<Materia> materiasDelSemestre = new ArrayList<>();
@@ -108,4 +93,14 @@ public class Carrera{
             }
         }
     }
+
+  public int creditosTotales(Estudiante estudiante) {
+    int totalCreditos = 0;
+    if (estudiante != null) {
+        for (Materia materia : estudiante.getMateriasInscritas()) {
+            totalCreditos += materia.getCreditos();
+        }
+    }
+    return totalCreditos;
+}
 }

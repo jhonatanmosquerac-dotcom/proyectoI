@@ -1,4 +1,5 @@
 package co.edu.uniquindio.poo.Java.Java.Java.Java.java.model.Carrera;
+import java.util.ArrayList;
 
 public class Estudiante{
     private String nombre;
@@ -71,4 +72,16 @@ public class Estudiante{
                 '}';
     }
 
+    private ArrayList<Materia> materiasInscritas = new ArrayList<>();
+
+public void inscribirMateria(Materia materia) {
+    if (materia != null) materiasInscritas.add(materia);
 }
+
+public ArrayList<Materia> getMateriasInscritas() {
+    return materiasInscritas;
+}
+
+}
+
+

@@ -4,7 +4,7 @@ public class Practica extends Materia {
     private int horasPracticas;
     private int numeroLaboratorios;
 
-    public Practica(String nombre, String codigo, String horasSemana, int creditos, String semestre, int horasPracticas,
+    public Practica(String nombre, String codigo, int horasSemana, int creditos, String semestre, int horasPracticas,
             int numeroLaboratorios) {
         super(nombre, codigo, horasSemana, creditos, semestre);
         this.horasPracticas = horasPracticas;

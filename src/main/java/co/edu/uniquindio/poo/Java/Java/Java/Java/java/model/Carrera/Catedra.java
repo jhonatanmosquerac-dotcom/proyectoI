@@ -1,9 +1,10 @@
 package co.edu.uniquindio.poo.Java.Java.Java.Java.java.model.Carrera;
 
-public class Catedra {
+public class Catedra extends Profesor {
     public int horasContratado;
     public String otraEmpresa;
-    public Catedra(int horasContratado, String otraEmpresa) {
+    public Catedra(String nombre, String id, String tituloAcademico, String añosExperiencia, int horasContratado, String otraEmpresa) {
+        super(nombre, id, tituloAcademico, añosExperiencia);
         this.horasContratado = horasContratado;
         this.otraEmpresa = otraEmpresa;
     }

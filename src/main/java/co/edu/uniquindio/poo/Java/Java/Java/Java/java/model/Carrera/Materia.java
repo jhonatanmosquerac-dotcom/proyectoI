@@ -6,20 +6,20 @@ import java.util.List;
 public class Materia {
     private String nombre;
     private String codigo;
-    private String horasSemana;
+    private int horasSemana;
     private int creditos;
     private String semestre;
     private ArrayList <Profesor> listaProfesores;
-    private List<Materia> listaMaterias = new ArrayList<>();
+    private List<Materia> listaMaterias;
     private ArrayList<Object> tipoMateria;
 
-    public Materia(String nombre, String codigo, String horasSemana, int creditos, String semestre) {
+    public Materia(String nombre, String codigo, int horasSemana, int creditos, String semestre) {
         this.nombre = nombre;
         this.codigo = codigo;
         this.horasSemana = horasSemana;
         this.creditos = creditos;
         this.semestre = semestre;
-        this.tipoMateria = tipoMateria;
+        this.tipoMateria = new ArrayList<>();
         this.listaProfesores = new ArrayList<>();
         this.listaMaterias = new ArrayList<>();
     }
@@ -43,11 +43,11 @@ public class Materia {
         this.codigo = codigo;
     }
 
-    public String getHorasSemana() {
+    public int getHorasSemana() {
         return horasSemana;
     }
 
-    public void setHorasSemana(String horasSemana) {
+    public void setHorasSemana(int horasSemana) {
         this.horasSemana = horasSemana;
     }
 
@@ -102,7 +102,7 @@ public class Materia {
     }
     public int horasClase(Materia teorica, Materia practica) {
         int horas = 0;
-        horas = Integer.parseInt(teorica.getHorasSemana()) + Integer.parseInt(practica.getHorasSemana());
+        horas = teorica.getHorasSemana() + practica.getHorasSemana();
         return horas;
     }
 
@@ -120,15 +120,4 @@ public class Materia {
         System.out.println("estas son las materias practicas : " + practicas +" y estas son las teoricas : " + teoricas);
         return tipoMateria;
     }
-
-    public void asignarEstudiante(Estudiante estudiante) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'asignarEstudiante'");
-    }
-
-    public void removerProfesor(Profesor profesor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removerProfesor'");
-    }
-
 }
