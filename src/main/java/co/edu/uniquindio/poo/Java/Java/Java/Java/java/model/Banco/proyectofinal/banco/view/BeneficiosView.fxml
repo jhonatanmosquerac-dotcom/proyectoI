@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.proyectofinal.banco.controller.BeneficiosController"
+      spacing="10" alignment="CENTER" stylesheets="@style.css">
+
+    <Label text="Beneficios disponibles" styleClass="title"/>
+    <ListView fx:id="beneficiosList"/>
+    <Button text="Canjear" onAction="#handleCanjear"/>
+    <Label fx:id="messageLabel"/>
+</VBox>
+
