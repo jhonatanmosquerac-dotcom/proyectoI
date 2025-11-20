@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.proyectofinal.banco.controller.DashboardController"
+      spacing="15" alignment="CENTER" stylesheets="@style.css">
+
+    <Label text="Panel Principal" styleClass="title"/>
+    <Label fx:id="saldoLabel"/>
+    <Label fx:id="puntosLabel"/>
+
+    <HBox spacing="10">
+        <Button text="Depositar" onAction="#handleDeposito"/>
+        <Button text="Retirar" onAction="#handleRetiro"/>
+        <Button text="Transferir" onAction="#handleTransferencia"/>
+    </HBox>
+
+    <Button text="Ver Beneficios" onAction="#handleBeneficios"/>
+    <Button text="Cerrar Sesión" onAction="#handleLogout"/>
+</VBox>
+

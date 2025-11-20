@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.proyectofinal.banco.controller.LoginController"
+      spacing="10" alignment="CENTER" stylesheets="@style.css">
+
+    <Label text="Banco Copilot" styleClass="title"/>
+    <TextField fx:id="usernameField" promptText="Usuario"/>
+    <PasswordField fx:id="passwordField" promptText="Contraseña"/>
+    <HBox spacing="10">
+        <Button text="Ingresar" onAction="#handleLogin"/>
+        <Button text="Registrar" onAction="#handleRegister"/>
+    </HBox>
+    <Label fx:id="messageLabel"/>
+</VBox>
+

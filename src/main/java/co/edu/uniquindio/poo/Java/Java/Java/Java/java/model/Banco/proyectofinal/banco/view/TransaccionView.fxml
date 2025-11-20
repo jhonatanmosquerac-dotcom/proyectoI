@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.uniquindio.poo.proyectofinal.banco.controller.TransaccionController"
+      spacing="10" alignment="CENTER" stylesheets="@style.css">
+
+    <Label text="Transacción" styleClass="title"/>
+    <TextField fx:id="montoField" promptText="Monto"/>
+    <TextField fx:id="origenField" promptText="Cuenta origen"/>
+    <TextField fx:id="destinoField" promptText="Cuenta destino (si aplica)"/>
+    <HBox spacing="10">
+        <Button text="Depositar" onAction="#handleDeposito"/>
+        <Button text="Retirar" onAction="#handleRetiro"/>
+        <Button text="Transferir" onAction="#handleTransferencia"/>
+    </HBox>
+    <Label fx:id="messageLabel"/>
+</VBox>
+
